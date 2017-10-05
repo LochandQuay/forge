@@ -8,8 +8,8 @@ class Api::Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    super
+  # def create
+    # super
 
     # NOTE:
     # params: {
@@ -20,7 +20,7 @@ class Api::Users::RegistrationsController < Devise::RegistrationsController
     #     "password"=>"[FILTERED]",
     #     "password_confirmation"=>"[FILTERED]"},
     #   "commit"=>"Sign up"}
-  end
+  # end
 
   # GET /resource/edit
   # def edit
