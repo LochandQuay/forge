@@ -11,16 +11,20 @@ task check_for_updates: :environment do
       "X-Mashape-Key" => "H7cTVoRmvYmsh2BlB4EiXsR3T6Frp146VamjsnZ251gp5WuQI7",
       "Accept" => "application/json"
     })
+
+  parsed_response = JSON.parse(response.body)
+
   puts '...'
   puts '...'
   puts "\n\n200 OK"
   current_patch = Patch.last ? Patch.last.patch : 'n/a'
-  latest_patch = JSON.parse(response.body)['patch']
-  
+  latest_patch = parsed_response['patch']
+  card_sets = parsed_response['sets']
+
   puts "\n\nForge's Current Patch: #{current_patch}"
   puts "Current Patch Available: #{latest_patch}"
   
   if current_patch != latest_patch
-    Rake::Task[:update_cards].invoke(latest_patch)
+    Rake::Task[:update_cards].invoke(latest_patch, card_sets)
   end
 end
