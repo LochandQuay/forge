@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010175511) do
+ActiveRecord::Schema.define(version: 20171010234221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,21 +38,21 @@ ActiveRecord::Schema.define(version: 20171010175511) do
     t.string "name", null: false
     t.string "card_set", null: false
     t.string "card_type", null: false
-    t.string "faction", null: false
-    t.string "rarity", null: false
-    t.integer "cost", null: false
+    t.string "faction"
+    t.string "rarity"
+    t.integer "cost"
     t.integer "attack"
     t.integer "health"
     t.integer "armor"
     t.string "text"
-    t.string "flavor", null: false
-    t.string "artist", null: false
-    t.boolean "collectible", null: false
-    t.boolean "elite", null: false
+    t.string "flavor"
+    t.string "artist"
+    t.boolean "collectible"
+    t.boolean "elite"
     t.string "race"
     t.string "player_class", null: false
-    t.string "img", null: false
-    t.string "img_gold", null: false
+    t.string "img"
+    t.string "img_gold"
     t.string "how_to_get"
     t.string "how_to_get_gold"
     t.string "locale"
