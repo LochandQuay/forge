@@ -8,7 +8,7 @@ task check_for_updates: :environment do
     method: :get, 
     url: 'https://omgvamp-hearthstone-v1.p.mashape.com/info',
     headers: {
-      "X-Mashape-Key" => "H7cTVoRmvYmsh2BlB4EiXsR3T6Frp146VamjsnZ251gp5WuQI7",
+      "X-Mashape-Key" => ENV["HEARTHSTONE_API_KEY"],
       "Accept" => "application/json"
     })
 

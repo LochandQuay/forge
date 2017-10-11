@@ -17,7 +17,7 @@ task :update_cards, [:patch, :card_sets] => :environment do |t, args|
         method: :get,
         url: "https://omgvamp-hearthstone-v1.p.mashape.com/cards/sets/#{encoded_set}",
         headers: {
-          "X-Mashape-Key" => "H7cTVoRmvYmsh2BlB4EiXsR3T6Frp146VamjsnZ251gp5WuQI7"
+          "X-Mashape-Key" => ENV["HEARTHSTONE_API_KEY"]
         })
     rescue RestClient::ExceptionWithResponse => err
       puts "Request for #{set.magenta} resulted in #{err.to_s.red}"
