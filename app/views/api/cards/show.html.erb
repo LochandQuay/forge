@@ -1,0 +1,10 @@
+<%= link_to 'Back', :back %>
+<h1><%= @card.name %></h1>
+<% @card.img_urls.each_with_index do |url, idx| %>
+  <img src="<%= url %>" alt="<%= "#{@card.name} [#{idx == 1 ? 'Golden' : ''}]" %>">
+<% end %>
+<ul>
+  <% @card.displayable_attributes.each do |attr| %>
+    <li><%= attr.titleize %>: <%= @card[attr] %></li>
+  <% end %>
+</ul>

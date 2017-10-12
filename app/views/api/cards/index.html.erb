@@ -1,0 +1,21 @@
+<nav id="main-nav">
+  <ul class="dropdown class-nav">
+    <li></li>
+  </ul>
+</nav>
+
+<p>Displaying <%= @cards.count %> cards</p>
+<% if @filters %>
+  <ul>
+    Filters:
+    <% @filters.each do |filter| %>
+      <li><%= filter %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% @cards.each do |card| %>
+  <a href="/cards/<%= card.id%>">
+    <img src="<%= card.img %>" alt="<%= card.name %>">
+  </a>
+<% end %>
