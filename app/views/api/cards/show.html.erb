@@ -5,6 +5,6 @@
 <% end %>
 <ul>
   <% @card.displayable_attributes.each do |attr| %>
-    <li><%= attr.titleize %>: <%= @card[attr] %></li>
+    <li><%= attr.titleize %>: <%= @card[attr].is_a?(String) ? @card[attr].html_safe : @card[attr] %></li>
   <% end %>
 </ul>
