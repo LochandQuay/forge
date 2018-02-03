@@ -1,15 +1,19 @@
+const path = require('path');
+
 module.exports = {
-  entry: '.frontend/forge.js',
+  context: __dirname,
+  entry: './frontend/forge.jsx',
   output: {
-    path: './app/assets/javascripts',
-    filename: 'bundle.js'
-  }, 
+    path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
+    filename: 'bundle.js',
+  },
   module: {
+    // noParse: /node_modules/,
     loaders: [
       {
         test: [/\.jsx?$/, /\.js?$/],
         exclude: /(node_modules)/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           presets: ['env', 'react']
         }
@@ -18,6 +22,6 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx', '*'],
   }
 };
