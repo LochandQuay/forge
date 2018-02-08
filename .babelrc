@@ -12,15 +12,15 @@
       }
     ],
     "react"
-  ],
-  "plugins": [
-    "syntax-dynamic-import",
-    "transform-object-rest-spread",
-    [
-      "transform-class-properties",
-      {
-        "spec": true
-      }
-    ]
   ]
+  // "plugins": [
+  //   "syntax-dynamic-import",
+  //   "transform-object-rest-spread",
+  //   [
+  //     "transform-class-properties",
+  //     {
+  //       "spec": true
+  //     }
+  //   ]
+  // ]
 }
