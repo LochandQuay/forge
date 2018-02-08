@@ -1,12 +1,16 @@
 import { RECEIVE_CARDS } from '../actions/card_actions';
 
-const cardReducer = (state = {}, action) => {
+const _blankState = {
+  byId: {},
+  allIds: []
+};
+
+const cardReducer = (state = _blankState, action) => {
   Object.freeze(state);
 
-  switch (action) {
+  switch (action.type) {
     case RECEIVE_CARDS:
       const nextState = Object.assign({}, state, action.cards);
-      console.log(nextState);
       return nextState;
   
     default:

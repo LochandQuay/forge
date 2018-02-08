@@ -6,11 +6,6 @@ class Api::CardsController < ApplicationController
     else
       @cards = Card.all
     end 
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @cards.to_json }
-    end
   end
   
   def show
