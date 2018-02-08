@@ -34,7 +34,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'rest-client'
 gem 'pry-rails'
+
+# Colorize for creating colored output running rake tasks in the terminal
 gem 'colorize'
+
+# Figaro for concealing API keys and database passwords
 gem 'figaro'
 
 group :development, :test do
